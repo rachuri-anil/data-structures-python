@@ -92,7 +92,6 @@ class SlinkedList:
         head_node = None
 
 
-
 if __name__ == "__main__":
     week_list = SlinkedList()
     week_list.head = Node("Monday")
@@ -102,7 +101,6 @@ if __name__ == "__main__":
     second_node.next = third_node
     print("Traversing a list ")
     week_list.print_list()
-    # inserting ant beginning
     week_list.insert_at_beginning("Sunday")
     print("Inserting a new node at beginning(Sunday)")
     week_list.print_list()
