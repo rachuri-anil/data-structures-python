@@ -69,6 +69,29 @@ class SlinkedList:
         new_node.next = middle_node.next
         middle_node.next = new_node
 
+    def remove_node(self,remove_key):
+        '''
+        Removes the node with supplied key
+        :param remove_key:
+        :return: None
+        '''
+        head_node = self.head
+        if head_node is not None:
+            if head_node.data == remove_key:
+                self.head = head_node.next
+                head_node = None
+                return
+        while head_node is not None:
+            if head_node.data == remove_key:
+                break
+            prev = head_node
+            head_node = head_node.next
+        if head_node is None:
+            return
+        prev.next = head_node.next
+        head_node = None
+
+
 
 if __name__ == "__main__":
     week_list = SlinkedList()
@@ -88,4 +111,7 @@ if __name__ == "__main__":
     week_list.print_list()
     week_list.insert_in_between(second_node, "random_value")
     print("After a random insert")
+    week_list.print_list()
+    print("After deleting..........")
+    week_list.remove_node("random_value")
     week_list.print_list()
